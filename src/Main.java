@@ -1,12 +1,14 @@
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
-        NewThread newThread1=new NewThread();
-        NewThread newThread2=new NewThread();
-        NewThread newThread3=new NewThread();
-        NewThread newThread4=new NewThread();
-        NewThread newThread5=new NewThread();
+        NewThread newThread1 = new NewThread();
+        NewThread newThread2 = new NewThread();
+        NewThread newThread3 = new NewThread();
+        NewThread newThread4 = new NewThread();
+        NewThread newThread5 = new NewThread();
         newThread1.start();
         newThread2.start();
         newThread3.start();
@@ -24,4 +26,5 @@ public class Main {
         newThread4.stop();
         newThread5.stop();
     }
+
 }
