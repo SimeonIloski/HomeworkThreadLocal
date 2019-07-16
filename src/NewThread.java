@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -35,14 +36,22 @@ public class NewThread extends Thread {
     @Override
     public void run()
     {
-        System.out.printf("Starting Thread: %s : %s\n", getThreadId(), startDate.get());
-        try
+        //printing the date of creating of the thread
+        System.out.println("Starting Thread: \t : \t"+ getThreadId()+startDate.get());
+       try
         {
             TimeUnit.SECONDS.sleep((int) Math.rint(Math.random() * 10));
-        } catch (InterruptedException e)
+            //getting random value for the thread squared and multiplied with the thread id
+            Random random=new Random();
+            int n=random.nextInt(50);
+            n=(n*n)*threadId.get();
+            System.out.println("Thread id is \t"+threadId.get());
+            System.out.println("The random generated number squared and multiplied with current threadID is \t"+n);
+
+        }  catch (InterruptedException e)
         {
             e.printStackTrace();
         }
-        System.out.printf("Thread Finished: %s : %s\n", getThreadId(), startDate.get());
+        System.out.println("Thread Finished: \t : \t\n"+getThreadId()+startDate.get());
     }
 }
